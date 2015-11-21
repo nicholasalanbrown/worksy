@@ -1,0 +1,21 @@
+{
+  "name": "WorksyRN",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android-setup-port": "adb reverse tcp:8081 tcp:8080",
+    "bundle": "rnws bundle",
+    "hot": "HOT=1 rnws start --hot",
+    "start": "rnws start"
+  },
+  "dependencies": {
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-react-transform": "^1.1.1",
+    "react-native": "^0.14.2",
+    "react-native-webpack-server": "^0.8.1",
+    "react-transform-hmr": "^1.0.1",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
