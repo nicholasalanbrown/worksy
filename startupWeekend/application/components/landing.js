@@ -32,7 +32,11 @@ class Landing extends React.Component{
           />
       </View>
         <View style={styles.content}>
-          <Text style={styles.title}>Welcome to Career Climb</Text>
+          <Image
+            style={styles.logo}
+            source={require('./logo.png')}
+          />
+          <Text style={styles.title}>jobtalk</Text>
         </View>
         <TouchableOpacity
           style={styles.btn}
@@ -72,10 +76,12 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#ffffff',
-    fontSize: 28,
-    fontWeight: '300'
+    fontSize: 42,
+    letterSpacing: -2,
+    fontWeight: '700'
   },
   content: {
+    flex: 1,
     backgroundColor: 'rgba(0,0,0,0)',
     alignItems: 'center',
     justifyContent: 'center',
@@ -98,6 +104,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 10,
     bottom: 0
+  },
+  logo: {
+    height: 80,
+    width: 70,
+    marginBottom: 10
   },
   btnText: {
     color: '#fff',
