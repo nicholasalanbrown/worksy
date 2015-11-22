@@ -4,7 +4,7 @@ const people = [
     price: 250,
     position: 'Partner',
     company: 'Kaan & Associates',
-    avatar: 'http://www.media4.hw-static.com/wp-content/uploads/don-cheadle-house-of-lies_47958751-368x314-368x314.jpeg’,
+    avatar: 'http://www.media4.hw-static.com/wp-content/uploads/don-cheadle-house-of-lies_47958751-368x314-368x314.jpeg',
     industry: 'Management Consulting’,
     starRating: ‘4’, 
     yearsOfExperience: ’15’,
