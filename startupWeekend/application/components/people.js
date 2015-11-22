@@ -8,7 +8,7 @@ const people = [
     industry: 'Management Consulting’,
     starRating: ‘4’ 
     yearsOfExperience: ’15’
-    canHelpWith: ‘General Advice, Informational Interviews, Interview Prep’
+    canHelpWith: [‘General Advice’, ‘Informational Interviews’, ‘Interview Prep’]
   },
   {
     name: ‘Srilaxman Kishor Ramanthan’,
