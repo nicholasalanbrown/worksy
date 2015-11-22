@@ -4,7 +4,7 @@ const people = [
     price: 250,
     position: 'Partner',
     company: 'Kaan & Associates',
-    avatar: '',
+    avatar: ‘google.com’,
     industry: 'Management Consulting',
   },
   {
