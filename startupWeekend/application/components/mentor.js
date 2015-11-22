@@ -63,6 +63,7 @@ class Mentor extends React.Component{
             style={styles.submitButton}
             onPress={() => {
               console.log('PRESS');
+              this.props.openModal();
             }}
           >
               <Text style={styles.submitButtonText}>Contact this Mentor</Text>

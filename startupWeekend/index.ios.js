@@ -20,8 +20,11 @@ class startupWeekend extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      modal: true
+      modal: false
     }
+  }
+  openModal(){
+    this.setState({modal: true})
   }
   render() {
     return (
@@ -31,6 +34,7 @@ class startupWeekend extends React.Component{
           initialRoute={{
             component: Signup,
             title: 'Welcome',
+            passProps: {openModal: this.openModal.bind(this)}
           }}
         />
         <Landing/>

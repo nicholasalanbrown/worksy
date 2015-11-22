@@ -49,10 +49,11 @@ class Mentors extends React.Component{
     return (
       <TouchableOpacity style={styles.mentorContainer}
         onPress={() => {
+          let self = this;
           this.props.navigator.push({
             component: Profile,
             title: rowData.name,
-            passProps: {mentor: rowData}
+            passProps: {mentor: rowData, openModal: self.props.openModal}
           });
         }}
         >
