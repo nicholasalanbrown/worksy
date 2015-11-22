@@ -43,7 +43,7 @@ class Landing extends React.Component{
           }}
           >
         <View style={styles.buttonInner}>
-          <Icon style={styles.icon} name="social-linkedin-outline" size={40} color='white'/>
+          <Icon style={styles.icon} name="social-linkedin-outline" size={50} color='white'/>
           <Text style={styles.btnText}>Sign in with LinkedIn</Text>
         </View>
         </TouchableOpacity>
@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    left: 15,
-    bottom: 10
+    left: 10,
+    bottom: 0
   },
   btnText: {
     color: '#fff',
