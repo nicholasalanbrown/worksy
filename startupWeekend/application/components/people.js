@@ -6,18 +6,9 @@ const people = [
     company: 'Kaan & Associates',
     avatar: 'http://www.media4.hw-static.com/wp-content/uploads/don-cheadle-house-of-lies_47958751-368x314-368x314.jpeg',
     industry: 'Management Consulting',
-    starRating: '4',
+    starRating: 4,
     yearsOfExperience: 15,
     canHelpWith: ['General Advice', 'Informational Interviews', 'Interview Prep']
-  },
-  {
-    name: 'Srilaxman Kishor Ramanthan',
-    price: 50,
-    position: 'Partner',
-    company: 'BCG',
-    avatar: 'http://www.google.com/imgres?imgurl=https://directory.engr.wisc.edu/private/includes/profilePictures/r/ramanathan_parameswaran.jpg&imgrefurl=http://www.engr.wisc.edu/ece/faculty/ramanathan_parameswaran.html&h=232&w=165&tbnid=7xf_mYbjj3wYEM:&docid=edvGvLmgtvmxPM&ei=dwtRVpvlEsz0-AHlsIGYAg&tbm=isch&ved=0ahUKEwjb_NSp4qLJAhVMOj4KHWVYACMQMwgoKAswCw',
-    industry: 'Management Consulting',
-    yearsOfExperience: 5,
   },
   {
     name: 'Daniel Stumner',
@@ -27,6 +18,7 @@ const people = [
     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/c_southam/128.jpg',
     industry: 'Management Consulting',
     yearsOfExperience: 5,
+    starRating: 4,
   },
   {
     name: 'Kelly Glick',
@@ -36,6 +28,7 @@ const people = [
     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/kfriedson/128.jpg',
     industry: 'Management Consulting',
     yearsOfExperience: 5,
+    starRating: 4,
   },
   {
     name: 'Lorenzo Pascal',
@@ -45,6 +38,7 @@ const people = [
     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/vocino/128.jpg',
     industry: 'Strategy Consulting, Financial Advisory',
     yearsOfExperience: 5,
+    starRating: 4,
   },
   {
     name: 'Joel Sloky',
@@ -54,6 +48,7 @@ const people = [
     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/dakshbhagya/128.jpg',
     industry: 'Strategy Consulting',
     yearsOfExperience: 5,
+    starRating: 4,
   },
   {
     name: 'Monica Talbot',
@@ -63,6 +58,7 @@ const people = [
     avatar: 'http://vignette2.wikia.nocookie.net/houseoflies/images/7/75/Monica.jpg/revision/latest?cb=20130115121100',
     industry: 'Managment Consulting',
     yearsOfExperience: 5,
+    starRating: 4,
   },
   {
     name: 'Jeannie Van Der Hooven',
@@ -72,6 +68,7 @@ const people = [
     avatar: 'http://assets.wornon.tv/uploads/2014/01/jeannies-printed-blouse-studded-jacket.jpg',
     industry: 'Management Consulting',
     yearsOfExperience: 5,
+    starRating: 4,
   },
   {
     name: 'Clyde Oberholt',
@@ -81,6 +78,7 @@ const people = [
     avatar: 'http://ia.media-imdb.com/images/M/MV5BMTQwNDgyNTgxNl5BMl5BanBnXkFtZTgwNjM0MzY0MTE@._V1_SX1333_CR0,0,1333,1774_AL_.jpg',
     industry: 'Management Consulting',
     yearsOfExperience: 5,
+    starRating: 4,
   },
   {
     name: 'Doug Guggenheim',
@@ -90,6 +88,7 @@ const people = [
     avatar: 'http://vignette4.wikia.nocookie.net/houseoflies/images/9/9b/Dougg.jpg/revision/latest?cb=20130116032041',
     industry: 'Management Consulting',
     yearsOfExperience: 5,
+    starRating: 4,
   },
 ]
 
