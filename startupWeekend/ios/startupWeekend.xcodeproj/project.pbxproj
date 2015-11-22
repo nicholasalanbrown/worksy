@@ -25,7 +25,6 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		890D2D5D1C0232B30079FF60 /* libRNOverlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 890D2D5C1C0232940079FF60 /* libRNOverlay.a */; };
-		890D2D811C0248F60079FF60 /* libRNModal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 890D2D7F1C0248EE0079FF60 /* libRNModal.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,7 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
-				890D2D811C0248F60079FF60 /* libRNModal.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				890D2D5D1C0232B30079FF60 /* libRNOverlay.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
