@@ -6,7 +6,7 @@ const people = [
     company: 'Kaan & Associates',
     avatar: 'http://www.media4.hw-static.com/wp-content/uploads/don-cheadle-house-of-lies_47958751-368x314-368x314.jpeg',
     industry: 'Management Consulting',
-    starRating: 4,
+    starRating: 5,
     yearsOfExperience: 15,
     canHelpWith: ['General Advice', 'Informational Interviews', 'Interview Prep']
   },
@@ -18,7 +18,7 @@ const people = [
     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/c_southam/128.jpg',
     industry: 'Management Consulting',
     yearsOfExperience: 5,
-    starRating: 4,
+    starRating: 5,
   },
   {
     name: 'Kelly Glick',
@@ -48,7 +48,7 @@ const people = [
     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/dakshbhagya/128.jpg',
     industry: 'Strategy Consulting',
     yearsOfExperience: 5,
-    starRating: 4,
+    starRating: 3,
   },
   {
     name: 'Monica Talbot',
@@ -58,7 +58,7 @@ const people = [
     avatar: 'http://vignette2.wikia.nocookie.net/houseoflies/images/7/75/Monica.jpg/revision/latest?cb=20130115121100',
     industry: 'Managment Consulting',
     yearsOfExperience: 5,
-    starRating: 4,
+    starRating: 3,
   },
   {
     name: 'Jeannie Van Der Hooven',
@@ -68,7 +68,7 @@ const people = [
     avatar: 'http://assets.wornon.tv/uploads/2014/01/jeannies-printed-blouse-studded-jacket.jpg',
     industry: 'Management Consulting',
     yearsOfExperience: 5,
-    starRating: 4,
+    starRating: 2,
   },
   {
     name: 'Clyde Oberholt',
