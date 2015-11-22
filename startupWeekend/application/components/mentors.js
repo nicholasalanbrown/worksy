@@ -81,6 +81,8 @@ class Mentors extends React.Component{
           </View>
         </View>
         <ListView
+          style={{flex: 1,}}
+          automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={this._renderRow.bind(this)}
         />
