@@ -51,10 +51,12 @@ class Signup extends React.Component{
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
+            let self = this;
             this.props.navigator.push({
               title: 'Mentors',
               component: Mentors,
               backButtonTitle: 'Back',
+              passProps: {openModal: self.props.openModal}
             })
           }}
         >

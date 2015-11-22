@@ -62,11 +62,12 @@ class Profile extends React.Component{
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
+              let self = this;
               this.props.navigator.push({
                 title: 'Mentor',
                 component: Mentor,
                 backButtonTitle: 'Back',
-                passProps: {mentor: this.props.mentor}
+                passProps: {mentor: this.props.mentor, openModal: self.props.openModal}
               })
             }}
           >
