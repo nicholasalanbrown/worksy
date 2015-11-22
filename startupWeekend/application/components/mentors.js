@@ -51,7 +51,7 @@ class Mentors extends React.Component{
         onPress={() => {
           this.props.navigator.push({
             component: Profile,
-            title: 'Profile',
+            title: rowData.name,
             passProps: {mentor: rowData}
           });
         }}

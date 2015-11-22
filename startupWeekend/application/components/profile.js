@@ -22,8 +22,14 @@ class Profile extends React.Component{
     return (
       <View style={styles.container}>
         <View style={styles.profile}>
-          <Image source={{uri: mentor.avatar}} style={styles.avatar} size={50}/>
-          <Text style={styles.name}>{mentor.name}</Text>
+        <View style={styles.header}>
+          <View style={styles.avatarContainer}>
+            <Image source={{uri: mentor.avatar}} style={styles.avatar} size={40}/>
+          </View>
+          <View style={styles.nameContainer}>
+            <Text style={styles.name}>{mentor.name}</Text>
+          </View>
+        </View>
           <Text style={styles.from}>from</Text>
           <Text style={styles.price}>${mentor.price}</Text>
           <View style={styles.separator}></View>
@@ -52,25 +58,36 @@ class Profile extends React.Component{
 let styles = StyleSheet.create({
   container :{
     flex: 1,
-    backgroundColor: 'white',
-    paddingTop: 80,
+    paddingTop: 60,
+    backgroundColor: 'white'
   },
-
+  header: {
+    flexDirection: 'row'
+  },
   profile: {
     flexDirection: 'column',
     padding: 30,
     alignItems: 'stretch',
     justifyContent: 'center',
   },
+  avatarContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex:0.3
+  },
   avatar: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+  },
+  nameContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 0.7
   },
   name: {
-    fontSize: 24,
-    color: 'black',
-    textAlign: 'center',
+    fontSize: 20,
+    color: Colors.mediumBlue
   },
   question: {
     fontSize: 26,
