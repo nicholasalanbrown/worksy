@@ -7,9 +7,10 @@ var {
   StyleSheet,
   Text,
   View,
+  ScrollView,
   NavigatorIOS,
   StyleSheet,
-  TouchableHighlight,
+  TouchableOpacity,
   TextInput,
 } = React;
 
@@ -17,9 +18,10 @@ class Signup extends React.Component{
   render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>
-          We just have a few questions about your background to help seekers find you:
-        </Text>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.instructionContainer}>
+          <Text style={styles.instructions}>These questions will help our mentors serve you best:</Text>
+        </View>
         <Text style={styles.question}>
           How many years of experience do you have?
         </Text>
@@ -28,28 +30,34 @@ class Signup extends React.Component{
           <Text style={styles.next}>{'>'}</Text>
         </View>
         <Text style={styles.question}>
-          What are some of your career highlights?
+          What industry are you looking to work in?
+        </Text>
+        <View style={styles.picker}>
+          <Text style={styles.pickerText}>Select</Text>
+          <Text style={styles.next}>{'>'}</Text>
+        </View>
+        <Text style={styles.question}>
+          What career moves are you trying to make?
         </Text>
         <TextInput
           style={styles.input}
-          placeholder='Type some highlights here...'
+          multiline={true}
+          placeholder='Type something here...'
         >
         </TextInput>
-        <View style={styles.buttonContainer}>
-          <TouchableHighlight
-            style={styles.button}
-            onPress={() => {
-              this.props.navigator.push({
-                title: 'Mentors',
-                component: Mentors,
-                backButtonTitle: 'Back',
-              })
-            }}
-            underlayColor={Colors.mediumBlue}
-          >
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            this.props.navigator.push({
+              title: 'Mentors',
+              component: Mentors,
+              backButtonTitle: 'Back',
+            })
+          }}
+        >
             <Text style={styles.buttonText}>Continue</Text>
-          </TouchableHighlight>
-        </View>
+        </TouchableOpacity>
+        </ScrollView>
       </View>
     )
   }
@@ -58,24 +66,28 @@ class Signup extends React.Component{
 let styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f7f7f7',
+    backgroundColor: Colors.aqua,
     justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    paddingTop: 120,
+    alignItems: 'stretch'
   },
-  title: {
+  scrollView: {
 
   },
+  title: {
+  },
+  instructionContainer: {
+    backgroundColor: 'white',
+  },
   instructions: {
-    color: 'black',
+    color: Colors.aqua,
+    padding: 20,
     textAlign: 'center',
     fontSize: 22,
-    fontWeight: '400',
+    fontWeight: '700',
   },
   question: {
     marginTop: 30,
-    color: Colors.mediumBlue,
-    textAlign: 'center',
+    color: 'white',
     fontSize: 22,
     padding: 20,
     fontWeight: '400',
@@ -85,20 +97,18 @@ let styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 10,
     borderWidth: 1,
-    borderColor: '#b4b4b4',
+    borderWidth: 0,
+    backgroundColor: 'white',
     marginTop: 15,
   },
-
   input: {
-   height: 80,
-   padding: 4,
-   marginRight: 5,
-   fontSize: 23,
-   borderWidth: 1,
-   borderColor: '#b4b4b4',
-   borderRadius: 8,
+    height: 120,
+   fontSize: 20,
+   padding: 8,
+   borderColor: 'white',
    color: 'black',
-   backgroundColor: Colors.lightBlue
+   backgroundColor: 'white',
+   marginBottom: 150
  },
   buttonContainer: {
     backgroundColor: Colors.mediumBlue,
@@ -106,6 +116,7 @@ let styles = StyleSheet.create({
   },
   button: {
     padding: 30,
+    marginTop: 120,
   },
   buttonText: {
     fontSize: 30,
@@ -115,22 +126,32 @@ let styles = StyleSheet.create({
   },
   pickerText: {
     fontSize: 20,
-    color: Colors.bodyText,
+    color: Colors.inactive,
     margin: 10,
   },
   next: {
     fontSize: 20,
-    color: Colors.bodyText,
+    color: Colors.inactive,
     margin: 10,
   },
   buttonContainer: {
 
   },
   button: {
-
+    marginTop: 120,
+    height: 80,
+    backgroundColor: Colors.mediumBlue,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0
   },
   buttonText: {
-
+    color: '#fff',
+    fontSize: 22,
+    fontWeight: '700'
   },
 })
 

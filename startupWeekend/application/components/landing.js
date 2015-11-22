@@ -79,7 +79,8 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 42,
     letterSpacing: -2,
-    fontWeight: '700'
+    fontWeight: '700',
+    marginTop: -10
   },
   content: {
     flex: 1,
@@ -107,9 +108,7 @@ const styles = StyleSheet.create({
     bottom: 0
   },
   logo: {
-    height: 80,
-    width: 70,
-    marginBottom: 10
+    marginBottom: 5
   },
   btnText: {
     color: '#fff',
