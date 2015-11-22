@@ -40,16 +40,17 @@ class TopModal extends React.Component{
   render () {
     return (
         <View style={styles.backdrop}>
-        <Animated.View style={[styles.modal, {transform: [{translateY: this.state.offset}]}]}>
-          <TouchableOpacity onPress={this.closeModal}  style={styles.icon}>
-            <Icon name="close-round" size={40} color='#ffffff'/>
-          </TouchableOpacity>
-        <View style={styles.heading}>
-        </View>
-        <View style={styles.commentaryContainer}>
-            <Text style={styles.commentaryText}>Success!</Text>
-        </View>
-        </Animated.View>
+          <Animated.View style={[styles.modal, {transform: [{translateY: this.state.offset}]}]}>
+
+            <View style={styles.commentaryContainer}>
+              <TouchableOpacity onPress={this.closeModal}  style={styles.icon}>
+                <Icon name="close-round" size={40} color='#ffffff'/>
+              </TouchableOpacity>
+              <Icon name="checkmark-circled" size={120} color='#ffffff'/>
+              <Text style={styles.commentaryText}>Success!</Text>
+              <Text style={styles.date}>You're all set for December 11th, 2015 @ 6:30 pm EST</Text>
+            </View>
+          </Animated.View>
         </View>
     )
   }
@@ -94,8 +95,14 @@ var styles = StyleSheet.create({
     color: '#ffffff',
     textAlign: 'center',
     fontWeight: '700',
-    lineHeight: 22,
-    marginBottom: 50
+    fontSize: 40,
+  },
+  date: {
+    color: 'white',
+    textAlign: 'center',
+    marginTop: 20,
+    fontSize: 25,
+    fontWeight: '300',
   }
 });
 
