@@ -58,9 +58,16 @@ class Mentor extends React.Component{
           multiline={true}
           placeholder='Type some highlights here...'
         />
-        <TouchableOpacity style={styles.submit}>
-          <Text style={styles.buttonText}>Submit</Text>
-        </TouchableOpacity>
+        <View style={styles.submitButtonContainer}>
+          <TouchableOpacity
+            style={styles.submitButton}
+            onPress={() => {
+              console.log('PRESS');
+            }}
+          >
+              <Text style={styles.submitButtonText}>Contact this Mentor</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     )
   }
@@ -74,8 +81,22 @@ let styles = StyleSheet.create({
   },
   profile: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 30
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 30,
+  },
+  submitButton: {
+    padding: 30,
+  },
+  submitButtonText: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+  },
+  submitButtonContainer: {
+    backgroundColor: Colors.mediumBlue,
+    height: 100,
   },
   avatar: {
     width: 100,
@@ -102,8 +123,10 @@ let styles = StyleSheet.create({
   ratingButton: {
     flex: 0.5,
     padding: 15,
+    margin: 20,
     backgroundColor: Colors.mediumBlue,
     borderWidth: 0,
+    borderRadius: 8,
     borderColor: 'black',
     height: 50,
   },
@@ -111,14 +134,13 @@ let styles = StyleSheet.create({
     flex: 0.5,
     padding: 15,
     height: 50,
+    margin: 20,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: Colors.mediumBlue,
     backgroundColor: 'white',
   },
-  buttonText: {
-    fontSize: 18,
-    textAlign: 'center',
-  },
+
   ratingButtonText: {
     fontSize: 18,
     color: '#fff',
@@ -128,6 +150,8 @@ let styles = StyleSheet.create({
     fontSize: 24,
     color: 'black',
     textAlign: 'center',
+    marginLeft: 10,
+    fontWeight: '300',
   },
   question: {
     fontSize: 26,
@@ -156,13 +180,17 @@ let styles = StyleSheet.create({
     color: Colors.mediumBlue,
     fontSize: 28,
     marginTop: 15,
+    textAlign: 'center',
+    marginBottom: 15,
   },
   input: {
-    height: 120,
+   height: 120,
+   borderRadius: 4,
    fontSize: 20,
    borderWidth: 1,
    borderColor: Colors.mediumBlue,
    padding: 8,
+   flex: 1,
    color: 'black',
    backgroundColor: 'white',
    margin: 5,

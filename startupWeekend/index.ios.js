@@ -7,6 +7,7 @@
 var React = require('react-native');
 import Landing from './application/components/landing';
 import Signup from './application/components/signup';
+import TopModal from './application/components/topModal';
 var {
   AppRegistry,
   StyleSheet,
@@ -15,8 +16,14 @@ var {
   NavigatorIOS,
 } = React;
 
-var startupWeekend = React.createClass({
-  render: function() {
+class startupWeekend extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      modal: true
+    }
+  }
+  render() {
     return (
       <View style={{flex: 1,}}>
         <NavigatorIOS
@@ -27,10 +34,11 @@ var startupWeekend = React.createClass({
           }}
         />
         <Landing/>
+        {this.state.modal ? <TopModal closeModal={() => this.setState({modal: false}) }/> : null }
       </View>
     );
   }
-});
+};
 
 var styles = StyleSheet.create({
   container: {
