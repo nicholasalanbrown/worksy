@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from './colors';
 import people from './people';
 import Mentor from './mentor';
+import Profile from './profile';
 var {
   AppRegistry,
   StyleSheet,
@@ -40,8 +41,8 @@ class Mentors extends React.Component{
       <TouchableOpacity style={styles.mentorContainer}
         onPress={() => {
           this.props.navigator.push({
-            component: Mentor,
-            title: 'Mentor',
+            component: Profile,
+            title: 'Profile',
             passProps: {mentor: rowData}
           });
         }}

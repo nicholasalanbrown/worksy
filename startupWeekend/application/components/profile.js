@@ -1,8 +1,7 @@
-
 var React = require('react-native');
 import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from './colors';
-import people from './people';
+import Mentor from './mentor';
 var {
   AppRegistry,
   StyleSheet,
@@ -17,7 +16,7 @@ var {
   ListView,
 } = React;
 
-class Mentor extends React.Component{
+class Profile extends React.Component{
   render(){
     let {mentor} = this.props;
     return (
@@ -25,23 +24,24 @@ class Mentor extends React.Component{
         <View style={styles.profile}>
           <Image source={{uri: mentor.avatar}} style={styles.avatar} size={50}/>
           <Text style={styles.name}>{mentor.name}</Text>
+          <Text style={styles.from}>from</Text>
+          <Text style={styles.price}>${mentor.price}</Text>
+          <View style={styles.separator}></View>
+          <Text style={styles.profileData}>{mentor.company}</Text>
+          <Text style={styles.profileData}>{mentor.position}</Text>
+          <Text style={styles.profileData}>{mentor.industry}</Text>
+          <Text style={styles.about}>About Me</Text>
+
         </View>
-        <Text style={styles.question}>How long do you want to talk?</Text>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>30 minutes</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>60 minutes</Text>
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.help}>What do you need help with?</Text>
-        <TextInput
-          style={styles.input}
-          multiline={true}
-          placeholder='Type some highlights here...'
-        />
-        <TouchableOpacity style={styles.submit}>
+        <TouchableOpacity style={styles.submit}
+          onPress={() => {
+            this.props.navigator.push({
+              component: Mentor,
+              title: 'Mentor',
+              passProps: {mentor: this.props.mentor}
+            });
+          }}
+        >
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
       </View>
@@ -55,10 +55,12 @@ let styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingTop: 80,
   },
+
   profile: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 30
+    flexDirection: 'column',
+    padding: 30,
+    alignItems: 'stretch',
+    justifyContent: 'center',
   },
   avatar: {
     width: 100,
@@ -80,6 +82,11 @@ let styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  from: {},
+  price: {},
+  separator: {},
+  profileData: {},
+  about: {},
   button: {
     padding: 15,
     height: 50,
@@ -117,4 +124,4 @@ let styles = StyleSheet.create({
   },
 })
 
-module.exports = Mentor;
+module.exports = Profile;
