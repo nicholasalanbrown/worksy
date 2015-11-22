@@ -36,8 +36,8 @@ class Profile extends React.Component{
           <Text style={styles.profileData}>{mentor.company}</Text>
           <Text style={styles.profileData}>{mentor.position}</Text>
           <Text style={styles.profileData}>{mentor.industry}</Text>
-          <Text style={styles.about}>About Me</Text>
-
+          <Text style={styles.subHead}>I can help with:</Text>
+            <View style={styles.separator}></View>
         </View>
         <TouchableOpacity style={styles.submit}
           onPress={() => {
@@ -59,7 +59,6 @@ let styles = StyleSheet.create({
   container :{
     flex: 1,
     paddingTop: 60,
-    backgroundColor: 'white'
   },
   header: {
     flexDirection: 'row'
@@ -87,6 +86,7 @@ let styles = StyleSheet.create({
   },
   name: {
     fontSize: 20,
+    textAlign: 'center',
     color: Colors.mediumBlue
   },
   question: {
@@ -99,11 +99,34 @@ let styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
-  from: {},
-  price: {},
-  separator: {},
-  profileData: {},
-  about: {},
+  from: {
+    fontSize: 18,
+    textAlign: 'center',
+  },
+  price: {
+    fontSize: 40,
+    padding: 4,
+    color: Colors.mediumBlue,
+    textAlign: 'center'
+  },
+  separator: {
+    height: 2,
+    backgroundColor: Colors.lightGray,
+    marginBottom: 15
+  },
+  profileData: {
+    textAlign: 'center',
+    color: Colors.bodyText,
+    fontSize: 18,
+    paddingVertical: 4
+  },
+  subHead: {
+    textAlign: 'center',
+    color: Colors.mediumBlue,
+    fontSize: 20,
+    fontWeight: '700',
+    paddingVertical: 4
+  },
   button: {
     padding: 15,
     height: 50,
