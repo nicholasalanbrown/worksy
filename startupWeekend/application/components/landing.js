@@ -38,7 +38,8 @@ class Landing extends React.Component{
           style={styles.btn}
           onPress={() => {
             this.props.navigator.push({
-              name: 'Home',
+              component: Signup,
+              title: 'Signup'
             })
           }}
           >
