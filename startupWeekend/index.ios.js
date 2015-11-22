@@ -6,6 +6,7 @@
 
 var React = require('react-native');
 import Landing from './application/components/landing';
+import Signup from './application/components/signup';
 var {
   AppRegistry,
   StyleSheet,
