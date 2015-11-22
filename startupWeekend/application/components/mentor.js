@@ -20,6 +20,22 @@ var {
 class Mentor extends React.Component{
   render(){
     let {mentor} = this.props;
+    let len = [];
+    for (var i=0; i<mentor.starRating; i++) {
+      len.push(i);
+    }
+    let empty = [];
+    let emptyLen = 5 - len.length;
+    for (var i=0; i<emptyLen; i++) {
+      empty.push(i);
+    }
+    let emptyStars = empty.map((star) => {
+      return <Icon style={styles.icon} name="ios-star-outline" size={25} color={Colors.stars}/>
+    })
+
+    let stars = len.map((star) => {
+      return   <Icon style={styles.icon} name="ios-star" size={25} color={Colors.stars}/>
+    })
     return (
       <View style={styles.container}>
         <View style={styles.profile}>
@@ -27,14 +43,15 @@ class Mentor extends React.Component{
           <Text style={styles.name}>{mentor.name}</Text>
         </View>
         <Text style={styles.question}>How long do you want to talk?</Text>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>30 minutes</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
+        <View style={styles.sortButtonContainer}>
+          <TouchableHighlight style={styles.ratingButton}>
+            <Text style={styles.ratingButtonText}>30 minutes</Text>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.priceButton}>
             <Text style={styles.buttonText}>60 minutes</Text>
-          </TouchableOpacity>
+          </TouchableHighlight>
         </View>
+
         <Text style={styles.help}>What do you need help with?</Text>
         <TextInput
           style={styles.input}
@@ -64,6 +81,48 @@ let styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
+  },
+  sortContainer: {
+    marginTop: 60,
+    marginBottom: 5,
+    backgroundColor: 'white',
+    borderColor: Colors.mediumBlue
+  },
+  sortText: {
+    fontSize: 20,
+    color: Colors.mediumBlue,
+    padding: 30,
+    textAlign: 'center',
+  },
+  sortButtonContainer: {
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    justifyContent: 'center',
+  },
+  ratingButton: {
+    flex: 0.5,
+    padding: 15,
+    backgroundColor: Colors.mediumBlue,
+    borderWidth: 0,
+    borderColor: 'black',
+    height: 50,
+  },
+  priceButton: {
+    flex: 0.5,
+    padding: 15,
+    height: 50,
+    borderWidth: 1,
+    borderColor: Colors.mediumBlue,
+    backgroundColor: 'white',
+  },
+  buttonText: {
+    fontSize: 18,
+    textAlign: 'center',
+  },
+  ratingButtonText: {
+    fontSize: 18,
+    color: '#fff',
+    textAlign: 'center',
   },
   name: {
     fontSize: 24,

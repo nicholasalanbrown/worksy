@@ -26,40 +26,60 @@ class Profile extends React.Component{
     }
     let serviceNodes = len.map((service) => {
       return   <Text style={styles.service}>{service}</Text>
+    let len = [];
+    for (var i=0; i<mentor.starRating; i++) {
+      len.push(i);
+    }
+    let empty = [];
+    let emptyLen = 5 - len.length;
+    for (var i=0; i<emptyLen; i++) {
+      empty.push(i);
+    }
+    let emptyStars = empty.map((star) => {
+      return <Icon style={styles.icon} name="ios-star-outline" size={25} color={Colors.stars}/>
+    })
+
+    let stars = len.map((star) => {
+      return   <Icon style={styles.icon} name="ios-star" size={25} color={Colors.stars}/>
     })
     return (
       <View style={styles.container}>
         <View style={styles.profile}>
-        <View style={styles.header}>
-          <View style={styles.avatarContainer}>
-            <Image source={{uri: mentor.avatar}} style={styles.avatar} size={40}/>
+          <View style={styles.header}>
+            <View style={styles.avatarContainer}>
+              <Image source={{uri: mentor.avatar}} style={styles.avatar} size={40}/>
+            </View>
+            <View style={styles.nameContainer}>
+              <Text style={styles.name}>{mentor.name}</Text>
+              <View style={{flex: 1, flexDirection: 'row'}}>
+                {stars}{emptyStars}
+              </View>
+            </View>
           </View>
-          <View style={styles.nameContainer}>
-            <Text style={styles.name}>{mentor.name}</Text>
-          </View>
-        </View>
-            <View style={styles.separator}></View>
           <Text style={styles.from}>from</Text>
           <Text style={styles.price}>${mentor.price}</Text>
           <View style={styles.separator}></View>
-          <Text style={styles.profileData}>{mentor.company}</Text>
-          <Text style={styles.profileData}>{mentor.position}</Text>
-          <Text style={styles.profileData}>{mentor.industry}</Text>
+          <Text style={styles.profileData}>Company: {mentor.company}</Text>
+          <Text style={styles.profileData}>Role: {mentor.position}</Text>
+          <Text style={styles.profileData}>Industry: {mentor.industry}</Text>
           <Text style={styles.subHead}>I can help with:</Text>
-            <View style={styles.separator}></View>
-            {serviceNodes}
+          <View style={styles.separator}></View>
         </View>
-        <TouchableOpacity style={styles.button}
-          onPress={() => {
-            this.props.navigator.push({
-              component: Mentor,
-              title: 'Mentor',
-              passProps: {mentor: this.props.mentor}
-            });
-          }}
-        >
-          <Text style={styles.buttonText}>Submit</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              this.props.navigator.push({
+                title: 'Mentor',
+                component: Mentor,
+                backButtonTitle: 'Back',
+                passProps: {mentor: this.props.mentor}
+              })
+            }}
+          >
+              <Text style={styles.buttonText}>Contact this Mentor</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     )
   }
@@ -69,37 +89,55 @@ let styles = StyleSheet.create({
   container :{
     flex: 1,
     paddingTop: 60,
+    justifyContent: 'space-between'
   },
   header: {
     flexDirection: 'row',
     marginBottom: 20
   },
+  button: {
+    padding: 30,
+  },
+  buttonText: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+  },
+  buttonContainer: {
+    backgroundColor: Colors.mediumBlue,
+    height: 100,
+  },
   profile: {
     flexDirection: 'column',
     padding: 30,
+    flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
   },
   avatarContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    flex:0.3
+    flex: 0.8
   },
   avatar: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 150,
+    height: 150,
+    borderRadius: 75,
   },
   nameContainer: {
-    justifyContent: 'center',
     alignItems: 'center',
-    flex: 0.7
+    padding: 15,
+    flex: 0.7,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   name: {
     fontSize: 20,
     marginTop: 20,
     textAlign: 'center',
-    color: Colors.mediumBlue
+    color: Colors.mediumBlue,
+    marginTop: 10,
   },
   service: {
     fontSize: 20,
@@ -113,10 +151,7 @@ let styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '300',
   },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
+
   from: {
     fontSize: 18,
     textAlign: 'center',
@@ -146,6 +181,7 @@ let styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 6
   },
+<<<<<<< HEAD
   button: {
     marginTop: 120,
     height: 80,
@@ -163,6 +199,9 @@ let styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center'
   },
+=======
+
+>>>>>>> 18036cc3465d9f509aa9e0b5a9836ba602228516
   help: {
     color: Colors.mediumBlue,
     fontSize: 28,
