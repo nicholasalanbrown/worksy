@@ -10,6 +10,7 @@ var {
   StyleSheet,
   Text,
   Image,
+  Easing,
   Animated,
   View,
   NavigatorIOS,
@@ -33,6 +34,7 @@ class Landing extends React.Component{
     }
   }
   render(){
+    console.log('EASING', Easing.inOut());
     return (
       <Animated.View style={[styles.container, {opacity: this.state.opacity}]}>
       <View style={styles.imageBackground}>
@@ -46,14 +48,18 @@ class Landing extends React.Component{
             source={require('./background.png')}
           />
       </View>
-        <View style={styles.content}>
+        <Animated.View style={[styles.content, {
+          transform: [
+            {scale: this.state.scale},
+          ],
+          }]}>
           <Animatable.Image
             animation="pulse"
             style={styles.logo}
             source={require('./logo.png')}
           />
           <Text style={styles.title}>jobtalk</Text>
-        </View>
+        </Animated.View>
         <TouchableOpacity
           style={styles.btn}
           onPress={() => {
@@ -61,24 +67,19 @@ class Landing extends React.Component{
               this.state.scale,                 // Animate `bounceValue`
               {
                 toValue: 5,
-                duration: 1000,
+                easing: Easing.inOut(Easing.exp),
+                duration: 500,
               }
             ).start();
+
             Animated.timing(
               this.state.opacity,
               {
                 toValue: 0,
-                duration: 1000,
+                duration: 500,
               }
             ).start();
-            let self = this;
-            function nextScreen() {
-              self.props.navigator.push({
-                title: 'Signup',
-                component: Signup,
-              })
-            }
-            setTimeout(nextScreen, 800);
+
           }}
           >
         <View style={styles.buttonInner}>
@@ -96,6 +97,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
     justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
   imageBackground: {
     position: 'absolute',

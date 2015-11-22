@@ -18,13 +18,16 @@ var {
 var startupWeekend = React.createClass({
   render: function() {
     return (
-      <NavigatorIOS
-        style={{flex: 1,}}
-        initialRoute={{
-          component: Landing,
-          title: 'Welcome',
-        }}
-      />
+      <View style={{flex: 1,}}>
+        <NavigatorIOS
+          style={{flex: 1,}}
+          initialRoute={{
+            component: Signup,
+            title: 'Welcome',
+          }}
+        />
+        <Landing/>
+      </View>
     );
   }
 });
