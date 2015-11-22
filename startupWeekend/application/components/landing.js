@@ -3,6 +3,7 @@ var React = require('react-native');
 import Colors from './colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Signup from './signup';
+var Animatable = require('react-native-animatable');
 var {
   AppRegistry,
   StyleSheet,
@@ -26,13 +27,14 @@ class Landing extends React.Component{
     return (
       <View style={styles.container}>
       <View style={styles.imageBackground}>
-          <Image
+          <Animatable.Image
             style={styles.image}
             source={require('./background.png')}
           />
       </View>
         <View style={styles.content}>
-          <Image
+          <Animatable.Image
+            animation="pulse"
             style={styles.logo}
             source={require('./logo.png')}
           />
