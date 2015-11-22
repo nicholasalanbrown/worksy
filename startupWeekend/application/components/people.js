@@ -8,8 +8,8 @@ const people = [
     industry: 'Management Consulting',
   },
   {
-    name: '',
-    price: '',
+    name: ‘Srilaxman Kishor Ramanthan’,
+    price: ’50’,
     position: '',
     company: '',
     avatar: '',
