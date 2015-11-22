@@ -78,7 +78,7 @@ class Mentors extends React.Component{
     return (
       <View style={styles.container}>
         <View style={styles.sortContainer}>
-          <Text style={styles.sortText}>Sort by:</Text>
+          <Text style={styles.sortText}>Sort 121 mentors by:</Text>
           <View style={styles.sortButtonContainer}>
             <TouchableHighlight style={styles.ratingButton}>
               <Text style={styles.ratingButtonText}>Rating</Text>
@@ -106,13 +106,14 @@ let styles = StyleSheet.create({
   },
   sortContainer: {
     marginTop: 60,
-    height: 100,
+    marginBottom: 5,
     backgroundColor: 'white',
     borderColor: Colors.mediumBlue
   },
   sortText: {
     fontSize: 20,
-    color: Colors.bodyTest,
+    color: Colors.mediumBlue,
+    padding: 30,
     textAlign: 'center',
   },
   sortButtonContainer: {
