@@ -1,6 +1,7 @@
 
 var React = require('react-native');
 import Colors from './colors';
+import Signup from './signup';
 var {
   AppRegistry,
   StyleSheet,
@@ -21,6 +22,13 @@ class Landing extends React.Component{
         <View style={styles.buttonContainer}>
           <TouchableHighlight
             style={styles.button}
+            onPress={() => {
+              this.props.navigator.push({
+                title: 'Signup',
+                component: Signup,
+                backButtonTitle: 'Back',
+              })
+            }}
             underlayColor={Colors.mediumBlue}
           >
             <Text style={styles.buttonText}>Sign in with LinkedIn</Text>
