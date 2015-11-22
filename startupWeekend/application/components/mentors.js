@@ -21,6 +21,7 @@ class Mentors extends React.Component{
       <View style={{flex: 1, backgroundColor: 'green'}}>
         <View style={styles.sortContainer}>
           <Text>Sort by:</Text>
+          <View style={styles.}></View>
         </View>
       </View>
     )

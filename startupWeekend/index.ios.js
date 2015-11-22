@@ -21,7 +21,7 @@ var startupWeekend = React.createClass({
         style={{flex: 1,}}
         initialRoute={{
           component: Landing,
-          title: 'Landing',
+          title: 'Welcome',
         }}
       />
     );
