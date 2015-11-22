@@ -3,16 +3,16 @@ var React = require('react-native');
 import Colors from './colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Signup from './signup';
-var Animatable = require('react-native-animatable');
+// var Animatable = require('react-native-animatable');
 
 var {
-  AppRegistry,
+  // AppRegistry,
   StyleSheet,
   Text,
   Image,
   Animated,
   View,
-  NavigatorIOS,
+  // NavigatorIOS,
   Dimensions,
   StyleSheet,
   TouchableHighlight,
@@ -24,63 +24,40 @@ let {
   height: deviceHeight
 } = Dimensions.get('window');
 
-class Landing extends React.Component{
+class Dumb extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      scale: new Animated.Value(1),
-      opacity: new Animated.Value(1),
+      scale: 1,
+      opacity: 1,
     }
   }
+
   render(){
     return (
-      <Animated.View style={[styles.container, {opacity: this.state.opacity}]}>
+      <Animated.View style={[styles.container, {
+        opacity: this.state.opacity
+      }]}>
       <View style={styles.imageBackground}>
-          <Animated.Image
-            style={[styles.image, {
-              transform: [
-                {scale: this.state.scale},
-              ],
-              opacity: this.state.opacity
-            }]}
+          <Image
+            style={styles.image}
             source={require('./background.png')}
           />
       </View>
         <View style={styles.content}>
-          <Animatable.Image
-            animation="pulse"
-            style={styles.logo}
-            source={require('./logo.png')}
-          />
           <Text style={styles.title}>jobtalk</Text>
         </View>
         <TouchableOpacity
-          style={styles.btn}
           onPress={() => {
-            Animated.timing(                          // Base: spring, decay, timing
-              this.state.scale,                 // Animate `bounceValue`
-              {
-                toValue: 5,
-                duration: 1000,
-              }
-            ).start();
             Animated.timing(
               this.state.opacity,
               {
-                toValue: 0,
+                toValue: 0.8,
                 duration: 1000,
               }
             ).start();
-            let self = this;
-            function nextScreen() {
-              self.props.navigator.push({
-                title: 'Signup',
-                component: Signup,
-              })
-            }
-            setTimeout(nextScreen, 800);
           }}
-          >
+          style={styles.btn}>
         <View style={styles.buttonInner}>
           <Icon style={styles.icon} name="social-linkedin-outline" size={50} color='white'/>
           <Text style={styles.btnText}>Sign in with LinkedIn</Text>
@@ -95,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'stretch',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   imageBackground: {
     position: 'absolute',
@@ -152,4 +129,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = Landing;
+module.exports = Dumb;

@@ -1,7 +1,10 @@
 
 var React = require('react-native');
 import Mentors from './mentors';
+import Landing from './landing';
 import Colors from './colors';
+import MyOverlay from './overlay';
+import Dumb from './dumb';
 var {
   AppRegistry,
   StyleSheet,
@@ -58,6 +61,7 @@ class Signup extends React.Component{
             <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
         </ScrollView>
+
       </View>
     )
   }
