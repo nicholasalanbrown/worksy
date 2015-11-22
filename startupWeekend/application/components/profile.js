@@ -19,6 +19,14 @@ var {
 class Profile extends React.Component{
   render(){
     let {mentor} = this.props;
+    let services = mentor.canHelpWith;
+    let len = [];
+    for (var i=0; i<services.length; i++) {
+      len.push(services[i]);
+    }
+    let serviceNodes = len.map((service) => {
+      return   <Text style={styles.service}>{service}</Text>
+    })
     return (
       <View style={styles.container}>
         <View style={styles.profile}>
@@ -30,6 +38,7 @@ class Profile extends React.Component{
             <Text style={styles.name}>{mentor.name}</Text>
           </View>
         </View>
+            <View style={styles.separator}></View>
           <Text style={styles.from}>from</Text>
           <Text style={styles.price}>${mentor.price}</Text>
           <View style={styles.separator}></View>
@@ -38,8 +47,9 @@ class Profile extends React.Component{
           <Text style={styles.profileData}>{mentor.industry}</Text>
           <Text style={styles.subHead}>I can help with:</Text>
             <View style={styles.separator}></View>
+            {serviceNodes}
         </View>
-        <TouchableOpacity style={styles.submit}
+        <TouchableOpacity style={styles.button}
           onPress={() => {
             this.props.navigator.push({
               component: Mentor,
@@ -61,7 +71,8 @@ let styles = StyleSheet.create({
     paddingTop: 60,
   },
   header: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginBottom: 20
   },
   profile: {
     flexDirection: 'column',
@@ -86,8 +97,15 @@ let styles = StyleSheet.create({
   },
   name: {
     fontSize: 20,
+    marginTop: 20,
     textAlign: 'center',
     color: Colors.mediumBlue
+  },
+  service: {
+    fontSize: 20,
+    textAlign: 'center',
+    paddingHorizontal: 10,
+    color: Colors.bodyText
   },
   question: {
     fontSize: 26,
@@ -125,20 +143,25 @@ let styles = StyleSheet.create({
     color: Colors.mediumBlue,
     fontSize: 20,
     fontWeight: '700',
-    paddingVertical: 4
+    paddingTop: 20,
+    paddingBottom: 6
   },
   button: {
-    padding: 15,
-    height: 50,
-    margin: 15,
-    borderWidth: 1,
-    borderColor: Colors.mediumBlue,
-    backgroundColor: 'white',
+    marginTop: 120,
+    height: 80,
+    backgroundColor: Colors.mediumBlue,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0
   },
   buttonText: {
-    fontSize: 18,
-    color: 'black',
-    textAlign: 'center',
+    color: '#fff',
+    fontSize: 22,
+    fontWeight: '700',
+    textAlign: 'center'
   },
   help: {
     color: Colors.mediumBlue,
