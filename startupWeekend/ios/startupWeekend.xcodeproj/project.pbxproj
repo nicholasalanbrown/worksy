@@ -25,6 +25,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		890D2D5D1C0232B30079FF60 /* libRNOverlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 890D2D5C1C0232940079FF60 /* libRNOverlay.a */; };
+		890D2D811C0248F60079FF60 /* libRNModal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 890D2D7F1C0248EE0079FF60 /* libRNModal.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNOverlay;
 		};
+		890D2D7E1C0248EE0079FF60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 890D2D701C0248EE0079FF60 /* RNModal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNModal;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +147,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		890D2D4D1C0232930079FF60 /* RNOverlay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNOverlay.xcodeproj; path = "../node_modules/react-native-overlay/RNOverlay.xcodeproj"; sourceTree = "<group>"; };
+		890D2D701C0248EE0079FF60 /* RNModal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNModal.xcodeproj; path = "../node_modules/react-native-modal/RNModal.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
+				890D2D811C0248F60079FF60 /* libRNModal.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				890D2D5D1C0232B30079FF60 /* libRNOverlay.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -277,6 +287,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				890D2D701C0248EE0079FF60 /* RNModal.xcodeproj */,
 				890D2D4D1C0232930079FF60 /* RNOverlay.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -326,6 +337,14 @@
 			isa = PBXGroup;
 			children = (
 				890D2D5C1C0232940079FF60 /* libRNOverlay.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		890D2D711C0248EE0079FF60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				890D2D7F1C0248EE0079FF60 /* libRNModal.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -440,6 +459,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 890D2D711C0248EE0079FF60 /* Products */;
+					ProjectRef = 890D2D701C0248EE0079FF60 /* RNModal.xcodeproj */;
+				},
+				{
 					ProductGroup = 890D2D4E1C0232930079FF60 /* Products */;
 					ProjectRef = 890D2D4D1C0232930079FF60 /* RNOverlay.xcodeproj */;
 				},
@@ -528,6 +551,13 @@
 			fileType = archive.ar;
 			path = libRNOverlay.a;
 			remoteRef = 890D2D5B1C0232940079FF60 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		890D2D7F1C0248EE0079FF60 /* libRNModal.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNModal.a;
+			remoteRef = 890D2D7E1C0248EE0079FF60 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
