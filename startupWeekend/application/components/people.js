@@ -1,7 +1,7 @@
 const people = [
   {
     name: 'Marty Kaan',
-    price: 250,
+    price: 20,
     position: 'Partner',
     company: 'Kaan & Associates',
     avatar: '',
@@ -9,7 +9,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -17,7 +17,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -25,7 +25,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -33,7 +33,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -41,7 +41,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -49,7 +49,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -57,7 +57,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -65,7 +65,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',
@@ -73,7 +73,7 @@ const people = [
   },
   {
     name: '',
-    price: '',
+    price: 0,
     position: '',
     company: '',
     avatar: '',

@@ -19,7 +19,9 @@ class Mentors extends React.Component{
   render(){
     return (
       <View style={{flex: 1, backgroundColor: 'green'}}>
-
+        <View style={styles.sortContainer}>
+          <Text>Sort by:</Text>
+        </View>
       </View>
     )
   }
