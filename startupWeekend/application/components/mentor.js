@@ -48,7 +48,7 @@ class Mentor extends React.Component{
             <Text style={styles.ratingButtonText}>30 minutes</Text>
           </TouchableHighlight>
           <TouchableHighlight style={styles.priceButton}>
-            <Text style={styles.buttonText}>60 minutes</Text>
+            <Text style={styles.priceText}>60 minutes</Text>
           </TouchableHighlight>
         </View>
 
@@ -58,17 +58,15 @@ class Mentor extends React.Component{
           multiline={true}
           placeholder='Type some highlights here...'
         />
-        <View style={styles.submitButtonContainer}>
           <TouchableOpacity
-            style={styles.submitButton}
+            style={styles.button}
             onPress={() => {
               console.log('PRESS');
               this.props.openModal();
             }}
           >
-              <Text style={styles.submitButtonText}>Contact this Mentor</Text>
+              <Text style={styles.buttonText}>Submit</Text>
           </TouchableOpacity>
-        </View>
       </View>
     )
   }
@@ -147,6 +145,11 @@ let styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
   },
+  priceText: {
+    fontSize: 18,
+    color: Colors.mediumBlue,
+    textAlign: 'center',
+  },
   name: {
     fontSize: 24,
     color: 'black',
@@ -172,20 +175,15 @@ let styles = StyleSheet.create({
     borderColor: Colors.mediumBlue,
     backgroundColor: 'white',
   },
-  buttonText: {
-    fontSize: 18,
-    color: 'black',
-    textAlign: 'center',
-  },
   help: {
-    color: Colors.mediumBlue,
-    fontSize: 28,
-    marginTop: 15,
-    textAlign: 'center',
-    marginBottom: 15,
+    marginTop: 30,
+    color: Colors.bod,
+    fontSize: 22,
+    padding: 20,
+    fontWeight: '400',
   },
   input: {
-   height: 120,
+   height: 160,
    borderRadius: 4,
    fontSize: 20,
    borderWidth: 1,
@@ -194,14 +192,23 @@ let styles = StyleSheet.create({
    flex: 1,
    color: 'black',
    backgroundColor: 'white',
-   margin: 5,
+   margin: 5
   },
-  submit: {
-    padding: 15,
-    height: 50,
-    borderWidth: 1,
-    borderColor: Colors.mediumBlue,
+  button: {
+    marginTop: 120,
+    height: 80,
     backgroundColor: Colors.mediumBlue,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 22,
+    fontWeight: '700'
   },
 })
 

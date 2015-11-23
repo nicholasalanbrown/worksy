@@ -33,7 +33,7 @@ class startupWeekend extends React.Component{
           style={{flex: 1,}}
           initialRoute={{
             component: Signup,
-            title: 'Welcome',
+            title: 'Sign Up',
             passProps: {openModal: this.openModal.bind(this)}
           }}
         />

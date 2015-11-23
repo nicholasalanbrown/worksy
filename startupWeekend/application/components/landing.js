@@ -59,6 +59,7 @@ class Landing extends React.Component{
             source={require('./logo.png')}
           />
           <Text style={styles.title}>jobtalk</Text>
+          <Text style={styles.subtitle}>better career guidance</Text>
         </Animated.View>
         <TouchableOpacity
           style={styles.btn}
@@ -121,7 +122,13 @@ const styles = StyleSheet.create({
     fontSize: 42,
     letterSpacing: -2,
     fontWeight: '700',
-    marginTop: -10
+    marginTop: -10,
+    marginBottom: 30
+  },
+  subtitle: {
+    color: '#ffffff',
+    fontSize: 28,
+    fontWeight: '400'
   },
   content: {
     flex: 1,

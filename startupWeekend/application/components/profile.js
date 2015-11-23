@@ -21,12 +21,6 @@ class Profile extends React.Component{
     let {mentor} = this.props;
     let services = mentor.canHelpWith;
     let len = [];
-    for (var i=0; i<services.length; i++) {
-      len.push(services[i]);
-    }
-    let serviceNodes = len.map((service) => {
-      return   <Text style={styles.service}>{service}</Text>
-    let len = [];
     for (var i=0; i<mentor.starRating; i++) {
       len.push(i);
     }
@@ -47,7 +41,7 @@ class Profile extends React.Component{
         <View style={styles.profile}>
           <View style={styles.header}>
             <View style={styles.avatarContainer}>
-              <Image source={{uri: mentor.avatar}} style={styles.avatar} size={40}/>
+              <Image source={{uri: mentor.avatar}} style={styles.avatar} size={100}/>
             </View>
             <View style={styles.nameContainer}>
               <Text style={styles.name}>{mentor.name}</Text>
@@ -63,9 +57,8 @@ class Profile extends React.Component{
           <Text style={styles.profileData}>Role: {mentor.position}</Text>
           <Text style={styles.profileData}>Industry: {mentor.industry}</Text>
           <Text style={styles.subHead}>I can help with:</Text>
-          <View style={styles.separator}></View>
+          <Text style={styles.services}>Interview Prep, Resume Review, General Industry Guidance</Text>
         </View>
-        <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
@@ -80,7 +73,6 @@ class Profile extends React.Component{
           >
               <Text style={styles.buttonText}>Contact this Mentor</Text>
           </TouchableOpacity>
-        </View>
       </View>
     )
   }
@@ -95,15 +87,6 @@ let styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     marginBottom: 20
-  },
-  button: {
-    padding: 30,
-  },
-  buttonText: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
   },
   buttonContainer: {
     backgroundColor: Colors.mediumBlue,
@@ -122,9 +105,9 @@ let styles = StyleSheet.create({
     flex: 0.8
   },
   avatar: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
   },
   nameContainer: {
     alignItems: 'center',
@@ -174,6 +157,13 @@ let styles = StyleSheet.create({
     fontSize: 18,
     paddingVertical: 4
   },
+  services: {
+    textAlign: 'center',
+    color: Colors.bodyText,
+    fontSize: 18,
+    paddingVertical: 4,
+    marginBottom: 100
+  },
   subHead: {
     textAlign: 'center',
     color: Colors.mediumBlue,
@@ -182,27 +172,6 @@ let styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 6
   },
-<<<<<<< HEAD
-  button: {
-    marginTop: 120,
-    height: 80,
-    backgroundColor: Colors.mediumBlue,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    left: 0
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 22,
-    fontWeight: '700',
-    textAlign: 'center'
-  },
-=======
-
->>>>>>> 18036cc3465d9f509aa9e0b5a9836ba602228516
   help: {
     color: Colors.mediumBlue,
     fontSize: 28,
@@ -218,12 +187,21 @@ let styles = StyleSheet.create({
    backgroundColor: 'white',
    margin: 5,
   },
-  submit: {
-    padding: 15,
-    height: 50,
-    borderWidth: 1,
-    borderColor: Colors.mediumBlue,
+  button: {
+    marginTop: 120,
+    height: 80,
     backgroundColor: Colors.mediumBlue,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 22,
+    fontWeight: '700'
   },
 })
 
